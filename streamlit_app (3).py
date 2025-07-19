@@ -42,7 +42,7 @@ def calculate_gss(df, weights=None):
                 'woody': 0.2
             }
 
-        data = df[['available_biomass', 'shrub_percent', 'grazing_pressure', 'woody_count']].copy()
+        data = df[['available_biomass', 'Shrub %', 'grazing_pressure', 'woody count']].copy()
 
         # Debug view of input data
         st.write("🔍 Input data for scaling:")
@@ -102,7 +102,7 @@ def calculate_gss(df, weights=None):
         st.error("❌ Error during GSS calculation:")
         st.error(traceback.format_exc())
         st.error("⚠️ Data passed to function:")
-        st.dataframe(df[['available_biomass', 'shrub_percent', 'grazing_pressure', 'woody_count']].head())
+        st.dataframe(df[['available_biomass', 'Shrub %', 'grazing_pressure', 'woody count']].head())
         return pd.DataFrame()
 
 # --- Streamlit App ---
@@ -127,7 +127,7 @@ def main():
         except Exception as e:
             st.error(f"❌ Failed to read file: {e}")
         else:
-            required_cols = {'Plot_ID', 'available_biomass', 'shrub_percent', 'grazing_pressure', 'woody_count'}
+            required_cols = {'Plot Name', 'available_biomass', 'Shrub %', 'grazing_pressure', 'woody count'}
             if not required_cols.issubset(df.columns):
                 missing = required_cols - set(df.columns)
                 st.error(f"❌ Missing columns: {missing}")
