@@ -127,7 +127,7 @@ def main():
         except Exception as e:
             st.error(f"❌ Failed to read file: {e}")
         else:
-            required_cols = ['Plot_ID', 'available_biomass', 'shrub_percent', 'grazing_pressure', 'woody_count']
+            required_cols = ['Plot Name', 'available_biomass', 'Shrub %', 'grazing_pressure', 'total woody count']
             if not set(required_cols).issubset(df.columns):
                 missing = set(required_cols) - set(df.columns)
                 st.error(f"❌ Missing columns: {missing}")
