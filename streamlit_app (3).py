@@ -127,9 +127,9 @@ def main():
         except Exception as e:
             st.error(f"❌ Failed to read file: {e}")
         else:
-            required_cols = ['Plot Name', 'available_biomass', 'Shrub %', 'grazing_pressure', 'total woody count']
-            if not required_cols.issubset(df.columns):
-                missing = required_cols - set(df.columns)
+            required_cols = ['Plot_ID', 'available_biomass', 'shrub_percent', 'grazing_pressure', 'woody_count']
+            if not set(required_cols).issubset(df.columns):
+                missing = set(required_cols) - set(df.columns)
                 st.error(f"❌ Missing columns: {missing}")
             elif df[required_cols].isnull().any().any():
                 st.error("❌ Your file contains missing values in required columns. Please clean the data and try again.")
