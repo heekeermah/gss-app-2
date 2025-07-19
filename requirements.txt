@@ -1,5 +1,4 @@
 streamlit
 scikit_learn
 openai
-os
 traceback
