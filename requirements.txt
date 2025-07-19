@@ -2,3 +2,5 @@ streamlit
 scikit_learn
 openai
 traceback
+pandas
+openpyxl
