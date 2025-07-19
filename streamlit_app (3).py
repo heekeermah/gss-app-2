@@ -90,9 +90,9 @@ def calculate_gss(df, weights=None):
             lambda row: generate_ai_suggestion(
                 row['Diagnosis'],
                 row['available_biomass'],
-                row['shrub_percent'],
+                row['Shrub %'],
                 row['grazing_pressure'],
-                row['woody_count']
+                row['total woody count']
             ),
             axis=1
         )
